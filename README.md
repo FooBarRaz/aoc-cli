@@ -1,10 +1,8 @@
-Certainly! Here's the content of the README in a Markdown code block:
-
-# Project Name
+# Advent of Code CLI
 
 ## Description
 
-This CLI application is designed to streamline your workflow by allowing you to quickly create new items with specified parameters. It's built using Node.js, TypeScript, and Commander.js, and includes features like input validation with Yup and styled console output with Chalk.
+This is a set of command line tools to help automate repetitive tasks and speed up your daily Advent of Code workflow.
 
 ## Installation
 
@@ -42,7 +40,7 @@ aoc new <basePath> -y <year> -d <day> [-t <template>]
 Example:
 
 ```bash
-your-cli-name new myItem -y 2023 -d 15 -t basicTemplate
+aoc new src/problems 2023 15
 ```
 
 ## Features
