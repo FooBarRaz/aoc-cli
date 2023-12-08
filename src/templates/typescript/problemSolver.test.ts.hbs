@@ -1,14 +1,33 @@
-import { problem1, problem2 } from "./problemSolver";
+import { part1, part2, parseInput } from "./problemSolver";
 import data from "./data";
 
 describe("{{year}}", () => {
+  const exampleData = ``;
+  describe('parseInput', () => {
+    it('should parse input', () => {
+      expect(parseInput(data)).toBeDefined();
+    });
+  })
   describe("day{{day}}", () => {
     describe("problemSolver", () => {
-      it("should solve part 1", () => {
-        expect(problem1.solve(data)).toBe(42);
+      describe("part 1", () => {
+        it('should solve part 1 for example data', () => {
+          expect(part1(exampleData).toBe(42);
+        });
+
+        it("should solve part 1 for my data", () => {
+          expect(part1(data)).toBe(42);
+        });
       });
-      it("should solve part 2", () => {
-        expect(problem2.solve(data)).toBe(42);
+
+      describe("part 2", () => {
+        it('should solve part 2 for example data', () => {
+          expect(part2(exampleData).toBe(42);
+        });
+
+        it("should solve part 2 for my data", () => {
+            expect(part2(data)).toBe(42);
+        }); 
       }); 
     });
   });
