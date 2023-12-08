@@ -1,0 +1,14 @@
+{
+  "name": "aoc-cli",
+  "version": "1.0.0",
+  "description": "A CLI for working with Advent of Code challenges",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "advent-of-code"
+  ],
+  "author": "Raz Ali",
+  "license": "ISC"
+}
