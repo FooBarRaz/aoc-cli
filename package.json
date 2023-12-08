@@ -4,11 +4,26 @@
   "description": "A CLI for working with Advent of Code challenges",
   "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
+    "run": "node dist/index.js",
+    "start": "npm run build && npm run run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "advent-of-code"
+    "advent-of-code",
+    "aoc"
   ],
   "author": "Raz Ali",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/node": "^20.10.4",
+    "typescript": "^5.3.3"
+  },
+  "bin": {
+    "aoc": "./dist/index.js"
+  },
+  "dependencies": {
+    "commander": "^11.1.0"
+  }
 }
