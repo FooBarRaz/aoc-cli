@@ -51,11 +51,20 @@ You can create custom templates for any language, framework, or style by adding 
 - `{{day}}`: The day of the problem.
 - `{{puzzleInput}}`: The puzzle input for the problem. Refer to [Puzzle Input](#puzzle-input) for more information.
 
+
+### Puzzle Input
+
+You can specify a session token to be used to retrieve your own puzzle input for a problem. This can be done in one of two ways:
+
+1. Set the `AOC_SESSION` environment variable to your session token.
+2. Pass the session token as an argument to the `new` command using the `-s` or `--session` flag.
+
+
+You can get your session token by logging into your Advent of Code account and viewing the page source. Search for the string `session=` and copy the value of the `value` attribute of the input element. This is your session token.
 ## Features
 
 - Simple and intuitive CLI commands to save you those precious seconds late at night
 - Customizable templates to support whatever weird ass languages you are using for AoC
-
 
 ## Contributing
 
