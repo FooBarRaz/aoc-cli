@@ -49,7 +49,7 @@ export async function setupNewDay(
   }
 
 
-  const directoryPath = `./src/templates/${template}`;
+  const directoryPath = `./templates/${template}`;
   const files = await promiseToReadDir(directoryPath);
 
   await files
