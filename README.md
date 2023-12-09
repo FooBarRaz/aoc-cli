@@ -1,12 +1,12 @@
-# Advent of Code CLI
+# 🎄 Advent of Code CLI 🎄
 
 ## Description
 
 This is a set of command line tools to help automate repetitive tasks and speed up your daily Advent of Code workflow.
 
-## Installation
+## Installation🎄
 
-To install the application globally:
+To install the application globally:🎄
 
 ```bash
 npm install -g .
