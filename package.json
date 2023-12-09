@@ -16,6 +16,7 @@
   "author": "Raz Ali",
   "license": "ISC",
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/commander": "^2.12.2",
     "@types/node": "^20.10.4",
     "typescript": "^5.3.3"
@@ -24,6 +25,7 @@
     "aoc": "./dist/index.js"
   },
   "dependencies": {
+    "axios": "^1.6.2",
     "chalk": "^4.1.2",
     "commander": "^11.1.0",
     "handlebars": "^4.7.8",

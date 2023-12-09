@@ -43,10 +43,17 @@ Example:
 aoc new src/problems 2023 15
 ```
 
+### Custom Templates
+You can create custom templates for any language, framework, or style by adding a new directory to the `templates` directory. The name of the directory will be the name of the template. Inside the directory, you can add any files or directories you want to be created when the template is used. You can use the following variables in your file and directory names to have them replaced with the appropriate values: 
+
+- `{{year}}`: The year of the problem.
+- `{{day}}`: The day of the problem.
+
 ## Features
 
 - Simple and intuitive CLI commands to save you those precious seconds late at night
 - Customizable templates to support whatever weird ass languages you are using for AoC
+
 
 ## Contributing
 

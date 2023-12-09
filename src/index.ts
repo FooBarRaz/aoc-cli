@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
 import { program } from "commander";
-import { createNew } from "./programs/new";
-import * as yup from "yup";
+import { createNew } from "./programs/new/main";
 import chalk from "chalk";
-import { schema as newCommandSchema } from "./programs/new";
+import { schema as newCommandSchema } from "./programs/new/main";
 
 program
   .name("Advent of Code CLI")
@@ -19,7 +18,12 @@ program
     "Specify a template (optional)",
     "typescript"
   )
-  .action((baseDirectory, year, day, options) => {
+  // add option for session token
+  .option(
+    "-s, --session [session]",
+    "Specify a session token with which to fetch your puzzle input (optional)",
+  )
+  .action(async (baseDirectory, year, day, options) => {
     try {
       newCommandSchema.validateSync({
         year,
@@ -31,11 +35,12 @@ program
       process.exit(1);
     }
 
-    createNew({
+    await createNew({
       baseDirectory,
       year: parseInt(year),
       day: parseInt(day),
       template: options.template,
+      sessionToken: options.session,
     });
   });
 

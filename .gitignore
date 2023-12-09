@@ -29,3 +29,5 @@ yarn-error.log*
 # Optional npm cache & logs
 .npm
 .npmrc
+
+scratch/*
