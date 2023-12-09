@@ -60,7 +60,7 @@ You can specify a session token to be used to retrieve your own puzzle input for
 2. Pass the session token as an argument to the `new` command using the `-s` or `--session` flag.
 
 
-You can get your session token by logging into your Advent of Code account and inspecting your cookies in the DevTools. Search for the string `session=` and copy the value of the `value` attribute of the input element. This is your session token.
+You can get your session token by going to the Advent of Code site while logged in, and inspecting your cookies in the DevTools. Search for the string `session=` and copy the value of the `value` attribute of the input element. This is your session token.
 
 ## Features
 
