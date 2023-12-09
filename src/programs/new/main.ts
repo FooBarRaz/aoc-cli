@@ -30,7 +30,7 @@ export async function setupNewDay(
   yearNumber: number,
   dayNumber: number,
   template: string,
-  sessionToken?: string
+  sessionToken: string | undefined = process.env.AOC_SESSION
 ) {
   const year = yearNumber.toString();
   const day = dayNumber.toString().padStart(2, "0");

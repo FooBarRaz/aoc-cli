@@ -36,6 +36,7 @@ aoc new <basePath> -y <year> -d <day> [-t <template>]
 - `-y, --year <year>`: The year for the problem.
 - `-d, --day <day>`: The day of the problem. Must be a number between 1 and 25.
 - `-t, --template [template]`: Specify a template (optional). Defaults to 'typescript'. For more information on adding templates, see [Custom Templates](#custom-templates).
+- `-s, --session [session]`: Specify a session token (optional). Defaults to the value of the `AOC_SESSION` environment variable. For more information on session tokens, see [Puzzle Input](#puzzle-input).
 
 Example:
 
@@ -48,6 +49,7 @@ You can create custom templates for any language, framework, or style by adding 
 
 - `{{year}}`: The year of the problem.
 - `{{day}}`: The day of the problem.
+- `{{puzzleInput}}`: The puzzle input for the problem. Refer to [Puzzle Input](#puzzle-input) for more information.
 
 ## Features
 
