@@ -7,7 +7,7 @@ import { schema as newCommandSchema } from "./programs/new/main";
 import figlet from "figlet";
 
 program
-  .name("Advent of Code CLI")
+  .name("aoc")
   .description("CLI for working with Advent of Code challenges")
   .version("0.1.0");
 
