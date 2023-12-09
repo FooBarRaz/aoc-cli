@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/FooBarRaz/aoc-cli//compare/v1.0.0...v1.0.1) (2023-12-09)
+
+
+### Bug Fixes
+
+* fix name in program help ([e4505c7](https://github.com/FooBarRaz/aoc-cli//commit/e4505c7bbe209ca66ec1860c173a997971a98835))
+* fix name in program help ([63c4743](https://github.com/FooBarRaz/aoc-cli//commit/63c4743e19a1c9e1963ad9c5f3b75e503879a692))
+
 # 1.0.0 (2023-12-09)
 
 
