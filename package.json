@@ -1,6 +1,6 @@
 {
   "name": "aoc-tools",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A set of tools for working with Advent of Code challenges",
   "main": "dist/index.js",
   "scripts": {
