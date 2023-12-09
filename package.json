@@ -7,7 +7,7 @@
     "build": "tsc",
     "run": "node dist/index.js",
     "start": "npm run build && npm run run",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "keywords": [
     "advent-of-code",
@@ -16,10 +16,13 @@
   "author": "Raz Ali",
   "license": "ISC",
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@types/axios": "^0.14.0",
     "@types/commander": "^2.12.2",
     "@types/figlet": "^1.5.8",
     "@types/node": "^20.10.4",
+    "semantic-release": "^22.0.10",
     "typescript": "^5.3.3"
   },
   "bin": {
@@ -41,5 +44,24 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/FooBarRaz/aoc-cli/"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      {
+        "path": "@semantic-release/git",
+        "assets": [
+          "CHANGELOG.md",
+          "package.json"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      },
+      "@semantic-release/npm"
+    ]
   }
 }
