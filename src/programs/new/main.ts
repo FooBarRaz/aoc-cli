@@ -3,6 +3,7 @@ import tree from "tree-node-cli";
 import * as yup from "yup";
 import { generateFile } from "./filegen";
 import { fetchPuzzleInput } from "../../aoc/fetchPuzzleInput";
+import path from "path";
 
 export const schema = yup.object().shape({
   year: yup
@@ -34,12 +35,12 @@ export async function setupNewDay(
 ) {
   const year = yearNumber.toString();
   const day = dayNumber.toString().padStart(2, "0");
-  const path = `${basePath}/${year}/day${day}`;
+  const dayDirPath = `${basePath}/${year}/day${day}`;
 
-  console.log("Setting up for year", year, "day", day, "at", path);
+  console.log("Setting up for year", year, "day", day, "at", dayDirPath);
 
-  if (!fs.existsSync(path)) {
-    fs.mkdirSync(path, { recursive: true });
+  if (!fs.existsSync(dayDirPath)) {
+    fs.mkdirSync(dayDirPath, { recursive: true });
   }
 
   let puzzleInput = `Get your puzzle input at https://adventofcode.com/${year}/day/${day}/input`;
@@ -49,7 +50,7 @@ export async function setupNewDay(
   }
 
 
-  const directoryPath = `./templates/${template}`;
+  const directoryPath = path.join(__dirname, "../../../", `templates/${template}`);
   const files = await promiseToReadDir(directoryPath);
 
   await files
@@ -60,12 +61,12 @@ export async function setupNewDay(
         await generateFile(
           template,
           { year, day, puzzleInput },
-          `${path}/${fileName}`
+          `${dayDirPath}/${fileName}`
         );
       }
     });
 
-  const fileTree = tree(path, { trailingSlash: true, allFiles: true });
+  const fileTree = tree(dayDirPath, { trailingSlash: true, allFiles: true });
   console.log(fileTree);
   console.log("LFG!🚀");
 }
