@@ -4,15 +4,33 @@ on:
   push:
     branches: [ main ]
 
+
 jobs:
-  publish:
+  release:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
-        node-version: '14'
+        node-version: '20'
         registry-url: 'https://registry.npmjs.org'
+    - run: npm install
+    - run: npm ci
+    - run: npx semantic-release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+
+  publish:
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '20'
+        registry-url: 'https://registry.npmjs.org'
+    - run: npm install
     - run: npm ci
     - run: npm test
     - run: npm publish
