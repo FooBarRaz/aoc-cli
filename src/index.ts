@@ -4,6 +4,20 @@ import { program } from "commander";
 import { createNew } from "./programs/new/main";
 import chalk from "chalk";
 import { schema as newCommandSchema } from "./programs/new/main";
+import figlet from "figlet";
+
+const figletPromise = (text: string): Promise<string> =>
+  new Promise((resolve, reject) => {
+    figlet(text, (err, data) => {
+      if (err) reject(err);
+      if(data) {
+      resolve(data);
+      }
+      else {
+        reject('No data');
+      }
+    });
+  });
 
 program
   .name("Advent of Code CLI")
@@ -44,4 +58,10 @@ program
     });
   });
 
-program.parse(process.argv);
+
+// write Advent of Code CLI using figlet
+
+figlet('Advent of Code CLI', function(_, data) {
+    console.log(chalk.blue(data));
+    program.parse(process.argv);
+});

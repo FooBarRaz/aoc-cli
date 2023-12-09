@@ -67,7 +67,7 @@ export async function setupNewDay(
 
   const fileTree = tree(path, { trailingSlash: true, allFiles: true });
   console.log(fileTree);
-  console.log("LFG!");
+  console.log("LFG!🚀");
 }
 
 type Args = {
